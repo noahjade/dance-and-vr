@@ -58,8 +58,13 @@ public class CustomBodyParticles : MonoBehaviour
   
         newposition = rb.transform.position;
 
+        //Linear relationship no base
+        //em.rateOverTime = Vector3.Distance(position, newposition)*10000 * 2.0f;
+
+        //Linear relationship
         em.rateOverTime = Vector3.Distance(position, newposition)*10000 * 2.0f + 10.0f;
 
+        //expontential relationship
         // 10 is waaay too high per update
         // so is 1
 
