@@ -7,7 +7,7 @@ public class InheritParentMotion : MonoBehaviour
 
     public ParticleSystem _ps;
     public Transform _tf;
-    public const int _arraySize = 5;
+    public const int _arraySize = 3;
     public float _accMultiplier = 1f;
 
     private float[] _aX;
@@ -15,6 +15,7 @@ public class InheritParentMotion : MonoBehaviour
     private float[] _aZ;
     private Vector3 _lastPos;
     private Vector3 _lastVelocity;
+    private Quaternion _lastQ;
     private int count = 0;
 
     private List<CustomParticle> _list;
@@ -41,26 +42,30 @@ public class InheritParentMotion : MonoBehaviour
         //Update average acceleration in each direction
         Vector3 currVel = _tf.position - _lastPos;
         Vector3 currAcc = currVel - _lastVelocity;
+    
+        Quaternion q = Quaternion.FromToRotation(_lastVelocity, currVel);
+        print("Last vel: " + _lastVelocity + ", currVel: " + currVel + ", Quaternion: " + q);
 
-        updateArray(_aX, currAcc.x);
-        updateArray(_aY, currAcc.x);
-        updateArray(_aZ, currAcc.x);
+        updateArray(_aX, q.x);
+        updateArray(_aY, q.y);
+        updateArray(_aZ, q.z);
 
         /*
         float aX = Average(_aX);
-        float aY = Average(_aX);
-        float aZ = Average(_aX);
+        float aY = Average(_aY);
+        float aZ = Average(_aZ);
         */
 
-        Vector3 avgAcc = new Vector3(Average(_aX), Average(_aY), Average(_aZ));
+        Quaternion avgAcc = new Quaternion( Average(_aX), Average(_aY), Average(_aZ), q.w);
 
-        if(count >= 5){
+
+        if(count >= 10){
+
             //Apply this acceleration to new particles
-            _list.Add(new CustomParticle(50, currVel, avgAcc*_accMultiplier, _tf.position));
+            _list.Add(new CustomParticle(400, currVel, avgAcc, _tf.position));
             count = 0;
         }
         count += 1;
-        
 
         //Update all particles in a list
         for (int i = _list.Count - 1; i >= 0; i--)
@@ -73,6 +78,10 @@ public class InheritParentMotion : MonoBehaviour
                 _list.RemoveAt(i);
             }
         }
+
+        //Update last velocity
+        _lastPos = _tf.position;
+        _lastVelocity = currVel;
     }
 
     
@@ -112,11 +121,11 @@ public class CustomParticle : MonoBehaviour{
 
     private GameObject _sphere;
     private int _lifetime;
-    private Vector3 _acceleration;
+    private Quaternion _acceleration;
     private Vector3 _velocity;
     private Rigidbody _rb;
 
-    public CustomParticle(int lifetime, Vector3 initialVelocity, Vector3 acceleration, Vector3 initialPosition){
+    public CustomParticle(int lifetime, Vector3 initialVelocity, Quaternion acceleration, Vector3 initialPosition){
         _lifetime = lifetime;
         _acceleration = acceleration;
         _velocity = initialVelocity;
@@ -128,11 +137,11 @@ public class CustomParticle : MonoBehaviour{
         _rb.useGravity = false;
         _sphere.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
         _sphere.transform.position = initialPosition;
-        //_rb.velocity = _velocity;
+        _rb.velocity = _velocity;
     }
 
     public void setKillTimer(){
-        Invoke("kill", 2.0f);
+        //Invoke("kill", 2.0f);
     }
 
     private void kill(){
@@ -141,7 +150,10 @@ public class CustomParticle : MonoBehaviour{
 
     public void Tick(){
         _lifetime = _lifetime - 1;
-        _rb.velocity = _rb.velocity + _acceleration*_forceMultiplier;
+        print("Velocity before: " + _rb.velocity);
+        print("Quaternion: " + _acceleration);
+        _rb.velocity =  _acceleration*_rb.velocity;
+        print("Velocity after: " + _rb.velocity);
     }
 
     public int getLifetime(){
