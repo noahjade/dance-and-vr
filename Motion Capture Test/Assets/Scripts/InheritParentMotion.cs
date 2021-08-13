@@ -40,29 +40,15 @@ public class InheritParentMotion : MonoBehaviour
     void FixedUpdate()
     {
         //Update average acceleration in each direction
-        Vector3 currVel = _tf.position - _lastPos;
-        Vector3 currAcc = currVel - _lastVelocity;
+        Vector3 currVel = (_tf.position - _lastPos)/Time.deltaTime;
     
-        Quaternion q = Quaternion.FromToRotation(_lastVelocity, currVel);
-        print("Last vel: " + _lastVelocity + ", currVel: " + currVel + ", Quaternion: " + q);
-
-        updateArray(_aX, q.x);
-        updateArray(_aY, q.y);
-        updateArray(_aZ, q.z);
-
-        /*
-        float aX = Average(_aX);
-        float aY = Average(_aY);
-        float aZ = Average(_aZ);
-        */
-
-        Quaternion avgAcc = new Quaternion( Average(_aX), Average(_aY), Average(_aZ), q.w);
-
+        Quaternion q = Quaternion.FromToRotation(Vector3.up, currVel);
+        print("Last vel : " + _lastVelocity + "Current vel: " + currVel + "Quaternion: " + q);
 
         if(count >= 10){
 
             //Apply this acceleration to new particles
-            _list.Add(new CustomParticle(400, currVel, avgAcc, _tf.position));
+            _list.Add(new CustomParticle(400, currVel, q, _tf.position));
             count = 0;
         }
         count += 1;
@@ -124,11 +110,16 @@ public class CustomParticle : MonoBehaviour{
     private Quaternion _acceleration;
     private Vector3 _velocity;
     private Rigidbody _rb;
+    private Vector3 _rotVel;
+    private float interpRatio = 0.1f;
 
     public CustomParticle(int lifetime, Vector3 initialVelocity, Quaternion acceleration, Vector3 initialPosition){
         _lifetime = lifetime;
         _acceleration = acceleration;
         _velocity = initialVelocity;
+        _rotVel = initialVelocity;
+
+        print("Acceleration: " + acceleration);
         
 
         //initialise sphere
@@ -150,10 +141,8 @@ public class CustomParticle : MonoBehaviour{
 
     public void Tick(){
         _lifetime = _lifetime - 1;
-        print("Velocity before: " + _rb.velocity);
-        print("Quaternion: " + _acceleration);
-        _rb.velocity =  _acceleration*_rb.velocity;
-        print("Velocity after: " + _rb.velocity);
+        _rotVel = (Quaternion.Lerp(Quaternion.identity, _acceleration, interpRatio*Time.deltaTime))*_rotVel;
+        _rb.velocity = _rotVel + _velocity;
     }
 
     public int getLifetime(){
