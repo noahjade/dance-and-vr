@@ -239,7 +239,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xSize: 50
   zSize: 50
-  speed: 1
+  frequencyMod: 1
+  amplitudeMod: 1
+  wavelengthMod: 1
   gridSize: 0.1
   _flatRad: 4
   _fullRad: 7

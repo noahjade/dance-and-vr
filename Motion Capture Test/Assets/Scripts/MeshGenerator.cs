@@ -12,10 +12,22 @@ public class MeshGenerator : MonoBehaviour
     public int xSize = 20;
     public int zSize = 20;
 
-    public float speed = 0.1f;
+    [Range (0.01f, 20f)]
+    public float frequencyMod = 1f;
+
+    [Range (0.01f, 5f)]
+    public float amplitudeMod = 1f;
+
+    [Range (0.01f, 5f)]
+    public float wavelengthMod = 1f;
+
+    [Range (0.01f, 10f)]
     public float gridSize = 1f;
 
+    [Range (0f, 10f)]
     public float _flatRad = 4f; //There is no height change within the flat radius
+
+    [Range (0f, 20f)]
     public float _fullRad = 7f; //Between the flat rad and full rad, the height of the sin wave will increase to it's regular maximum
 
     // Start is called before the first frame update
@@ -38,7 +50,7 @@ public class MeshGenerator : MonoBehaviour
             for(int x = 0; x <= xSize; x++){
 
                 var radDist = Math.Pow((Math.Pow(x-xSize/2, 2) + Math.Pow(z-zSize/2,2)), 0.5f); //centered around xSize/2, zSize/2
-                var height = Math.Sin(speed*Time.time + radDist);
+                var height = amplitudeMod*Math.Sin(frequencyMod*Time.time + radDist/wavelengthMod);
 
                 if(radDist < _flatRad){ //if point is within the flat radius
                     height = 0;
