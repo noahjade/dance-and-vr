@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.motioncapturetest.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\hwil965\\Documents\\GitHub\\dance-and-vr\\Motion Capture Test\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "Motion Capture Test [Testing]"
+        }
+      }
+    }
+  ]
+}
