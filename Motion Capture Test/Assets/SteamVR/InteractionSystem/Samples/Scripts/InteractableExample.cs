@@ -117,7 +117,7 @@ namespace Valve.VR.InteractionSystem.Sample
 		//-------------------------------------------------
 		private void HandAttachedUpdate( Hand hand )
 		{
-            generalText.text = string.Format("Attached: {0} :: Time: {1:F2}", hand.name, (Time.time - attachTime));
+			generalText.text = string.Format("Attached: {0} :: Time: {1:F2} :: Position: {2}", hand.name, (Time.time - attachTime), hand.transform.position);
 		}
 
         private bool lastHovering = false;
