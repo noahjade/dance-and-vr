@@ -18,7 +18,7 @@ public class VelocityTracker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = lastPos;
+        lastPos = transform.position;
         lastVel = new Vector3(0,0,0);
         curVel = new Vector3(0,0,0);
         lastSpeed = 0f;
@@ -45,7 +45,7 @@ public class VelocityTracker : MonoBehaviour
         lastSpeed = curSpeed;
 
         curVel = (transform.position - lastPos)/timeElapse;
-        print("position:" + transform.position + " lastPosition: " + lastPos + "last-pos: " + (transform.position-lastPos));
+        //print("position:" + transform.position + " lastPosition: " + lastPos + "last-pos: " + (transform.position-lastPos));
         curSpeed = curVel.magnitude;
         lastPos = transform.position;
     }

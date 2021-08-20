@@ -22,7 +22,7 @@ public class ChimeVelocity : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        print("In chime start method");
+        Debug.Log("In chime start method");
 
         volume = 0f;
 
@@ -61,7 +61,7 @@ public class ChimeVelocity : MonoBehaviour
 
 
         //print("volume: " + volume + " speed: " + speed + " lastspeed: " + lastSpeed + " delta time: " + Time.deltaTime);
-        print("volume: " + volume + " speed: " + speed);
+        //print("volume: " + volume + " speed: " + speed);
         am.SetVolume("chime", volume);
 
     }
