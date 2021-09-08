@@ -13,10 +13,12 @@ public class AudioManager : MonoBehaviour
     void Awake()
     {
         foreach(Sound s in sounds){
-            s. source = gameObject.AddComponent<AudioSource>();
+            s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
+            s.source.spatialBlend = (float)1.0;
+            s.source.spatialize = true; //ensures directional hearing in VR
         }
     }
 
