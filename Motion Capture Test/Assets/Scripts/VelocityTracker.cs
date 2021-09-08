@@ -9,6 +9,7 @@ public class VelocityTracker : MonoBehaviour
     private Vector3 curVel;
     private float curSpeed;
     private float lastSpeed;
+    private float acceleration;
 
     // Next update in second
     private float nextUpdate = 0.1f;
@@ -32,7 +33,7 @@ public class VelocityTracker : MonoBehaviour
         // If the next update is reached
         if(Time.time>=nextUpdate){
             // Change the next update (current second+1)
-            nextUpdate=Time.time+timeElapse;
+            nextUpdate+=timeElapse;
             // Call your fonction
             UpdateVelocities();
         }
@@ -45,8 +46,10 @@ public class VelocityTracker : MonoBehaviour
         lastSpeed = curSpeed;
 
         curVel = (transform.position - lastPos)/timeElapse;
+
         //print("position:" + transform.position + " lastPosition: " + lastPos + "last-pos: " + (transform.position-lastPos));
         curSpeed = curVel.magnitude;
+        acceleration = curSpeed - lastSpeed;
         lastPos = transform.position;
     }
 
@@ -64,6 +67,10 @@ public class VelocityTracker : MonoBehaviour
 
     public float getLastSpeed(){
         return lastSpeed;
+    }
+
+    public float getAcceleration(){
+        return acceleration;
     }
 
 }

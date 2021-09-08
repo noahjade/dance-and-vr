@@ -1,96 +1,78 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class VelocityScaler : MonoBehaviour
 {
 
-    public int _arraySize = 20;
-    public float _maxAcceleration = 0.1f;
+    public VelocityTracker[] velTrackList;
+
+    [Range(0.01f, 2f)]
     public float _scaleVariable = 0.5f;
 
-    private float[] _speedArray;
-    private float _speed;
-    private Vector3 _lastPos;
+    [Range (0,100)]
+    public float maxSpeed = 10f;
+
+    [Range (0,100)]
+    public float minSpeed = 0f;
+
+    [Range (0,1)]
+    public float minScale = 1f;
+
+    [Range (1, 100)]
+    public float maxScale = 5f;
+
+    public float delta = 0.1f;
+
+    private float ratio;
+    private float prevRatio;
+
     private Vector3 _initScale;
     private Transform _tf;
 
-    private float lastAvg1 = 0.0f;
-    private float lastAvg2 = 0.0f;
-
-    public GameObject _referenceObj;
-
     void Start()
     {
-        //Get the transform and position of transform
-        _tf = _referenceObj.GetComponent<Transform>();
-        _lastPos = _tf.position;
-
         _initScale = gameObject.transform.localScale;
         
-        //Initialise the speed array
-        _speedArray = new float[_arraySize];
-        initialiseArray(_speedArray, 0.0f);
-
-        //initialise averages
-        float average = Average(_speedArray);
-        lastAvg1 = average;
-        lastAvg2 = average;
+        ratio = 0;
+        prevRatio = 0;
     }
 
     void Update()
     {
-        //Get new speed
-        _speed = (_tf.position - _lastPos).magnitude;
-        _speed /= Time.deltaTime;
-        _lastPos = _tf.position;
-        
-
-        //Update the speed array for averaging
-        updateArray(_speedArray, _speed);
-
-        float average = Average(_speedArray);
-
-        //Correct sudden fluctuations
-        if(((lastAvg2 < lastAvg1) && (average < lastAvg1)) || ((lastAvg2 > lastAvg1) && (average > lastAvg1))){
-            lastAvg1 = (lastAvg2 + average)/2;
+        float sum = 0f;
+        foreach (var velTrack in velTrackList)
+        {
+            sum = sum + velTrack.getSpeed();
         }
-        
+
+        float speed = sum/(velTrackList.Length); //get average speed
+
+        if(speed < minSpeed){
+            ratio = 0;
+        } else if(speed > minSpeed + maxSpeed){
+            ratio = 1;
+        } else {
+            ratio = (speed/(minSpeed + maxSpeed));
+        }
+
+        //Smooth out transitions using delta
+        if(ratio > prevRatio){
+            float maxRatio = prevRatio + delta*Time.deltaTime;
+            ratio = Math.Min(maxRatio, ratio);
+        } else if (ratio < prevRatio){
+            float minRatio = prevRatio - delta*Time.deltaTime;
+            ratio = Math.Max(minRatio, ratio);
+        }
+
+        float scale = ((maxScale - minScale)*ratio + minScale);
+
         //Update the scale of the transform
-        gameObject.transform.localScale = new Vector3(_initScale.x, lastAvg1*_scaleVariable, _initScale.z);
+        gameObject.transform.localScale = new Vector3(_initScale.x, scale*_initScale.y, _initScale.z);
 
-        lastAvg2 = lastAvg1;
-        lastAvg1 = average;
-
+        prevRatio = ratio;
 
     }
-
-    void initialiseArray(float[] arrayIn, float initValue)
-    {
-        for(int i = 0; i < arrayIn.Length; i++){
-            arrayIn[i] = initValue;
-        }
-    }
-
-    void updateArray(float[] arrayIn, float nextValue){
-        float prev = nextValue;
-        float temp;
-
-        for(int i = 0; i < arrayIn.Length; i++){
-            temp = arrayIn[i];
-            arrayIn[i] = prev;
-            prev = temp;
-        }
-    }
-
-    float Average(float[] array){
-
-        float sum = 0.0f;
-
-        for(int i =0; i < array.Length; i++){
-            sum += array[i];
-        }
-
-        return(sum/array.Length);
-    }
+    
 }
