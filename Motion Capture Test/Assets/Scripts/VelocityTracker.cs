@@ -49,7 +49,7 @@ public class VelocityTracker : MonoBehaviour
 
         //print("position:" + transform.position + " lastPosition: " + lastPos + "last-pos: " + (transform.position-lastPos));
         curSpeed = curVel.magnitude;
-        acceleration = curSpeed - lastSpeed;
+        acceleration = (curSpeed - lastSpeed)/timeElapse;
         lastPos = transform.position;
     }
 
