@@ -18,7 +18,7 @@ public class LinearColor : MonoBehaviour
     private float currentrMap = 0.0f;
     private float currentgMap = 0.0f;
     private float currentbMap = 0.0f;
-    private int framesUnchanged = 0;
+    
 
 
     // Update is called once per frame

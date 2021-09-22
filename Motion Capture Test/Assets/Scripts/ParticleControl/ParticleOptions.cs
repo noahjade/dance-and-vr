@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class ParticleOptions : MonoBehaviour
 {
-
+    //image that the current color of the particles is displayed on
+    public Image colorRefImage;
 
     //All the instances of the customisable particles.
     //Though, I guess I want them to be particle systems....
@@ -14,6 +16,7 @@ public class ParticleOptions : MonoBehaviour
     //
     ParticleSystem[] pS;
 
+    
     
 
     // Start is called before the first frame update
@@ -26,25 +29,33 @@ public class ParticleOptions : MonoBehaviour
 
         // debug the number of the particle systems that were found so we can easily spot weird behavior
         Debug.Log("number of particle systems: " + pS.Length);
-
+        
     }
 
 
     // UI elements trigger these public functions
     
-
+    //random color
     public void setParticleColor()
     {
-        //set the particles to that color
-        //.startColor
-
-        /*
-         * 
-        ParticleSystem.MainModule settings = GetComponent<ParticleSystem>().main;
- settings.startColor = new ParticleSystem.MinMaxGradient( yourColor ); */
-
         Color color = new Color(Random.Range(0.0f,1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), .5f);
+        colorRefImage.color = color;
 
+        foreach (ParticleSystem p in pS)
+        {
+            //p.startColor = color;
+            ParticleSystem.MainModule settings = p.main;
+            settings.startColor = new ParticleSystem.MinMaxGradient(color);
+        }
+    }
+
+    //selected color
+    public void setSelectedParticleColor(Image img)
+    {
+
+
+        Color color = img.color;
+        colorRefImage.color = color;
 
         foreach (ParticleSystem p in pS)
         {
