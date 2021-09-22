@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 417401481310648163}
   - component: {fileID: 417401481310648160}
   - component: {fileID: 4224808541375800303}
+  - component: {fileID: 5471605888231791470}
+  - component: {fileID: 8275036711447545547}
   m_Layer: 0
   m_Name: GlideBall
   m_TagString: Untagged
@@ -108,4 +110,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc2b7c5428df415f9c687048264a267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killTimer: 45
+  killTimer: 60
+  freezeTimer: 27
+--- !u!114 &5471605888231791470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417401481310648161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87b016033c6e941f89393b4facac6736, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velTrackList: []
+  lowEmission: 0
+  lowColour: {r: 0, g: 0, b: 0, a: 0}
+  highEmission: 1
+  highColour: {r: 1, g: 0.9378901, b: 0.4575472, a: 1}
+  maxSpeed: 1
+  minSpeed: 0
+  delta: 0.5
+--- !u!114 &8275036711447545547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417401481310648161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d8f72481c6e04f439c8753a47f2181d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1.2

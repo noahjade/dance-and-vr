@@ -73,4 +73,8 @@ public class VelocityTracker : MonoBehaviour
         return acceleration;
     }
 
+    public float getHeight(){
+        return transform.position.y;
+    }
+
 }

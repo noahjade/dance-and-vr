@@ -18,6 +18,6 @@ public class Glide : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tf.position = tf.position + new Vector3(speed*Time.deltaTime,0,0);
+        tf.position = tf.position + new Vector3(-speed*Time.deltaTime,0,0);
     }
 }

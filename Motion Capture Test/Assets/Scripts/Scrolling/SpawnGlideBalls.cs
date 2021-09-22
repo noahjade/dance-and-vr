@@ -9,6 +9,8 @@ public class SpawnGlideBalls : MonoBehaviour
     public float frequency = 4f;
     private Transform tf;
     public float aheadDistance = 10f;
+    public float verticleDistance = 2f;
+    public VelocityTracker[] velTrackList;
 
     // This script will simply instantiate the Prefab when the game starts.
     void Start()
@@ -21,8 +23,10 @@ public class SpawnGlideBalls : MonoBehaviour
     IEnumerator spawnBalls(){
 
         while(true){
-            Instantiate(ballPrefab, tf.position + new Vector3(aheadDistance, 0, 5), Quaternion.identity);
-            Instantiate(ballPrefab, tf.position + new Vector3(aheadDistance, 0, -5), Quaternion.identity);
+            GlideBall left = Instantiate(ballPrefab, tf.position + new Vector3(aheadDistance, verticleDistance, 5), Quaternion.identity);
+            left.setVelocityColour(velTrackList);
+            GlideBall right = Instantiate(ballPrefab, tf.position + new Vector3(aheadDistance, verticleDistance, -5), Quaternion.identity);
+            right.setVelocityColour(velTrackList);
             yield return new WaitForSeconds(frequency);
         }
     }

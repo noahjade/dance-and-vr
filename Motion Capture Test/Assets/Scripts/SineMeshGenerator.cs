@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [RequireComponent(typeof(MeshFilter))]
-public class MeshGenerator : MonoBehaviour
+public class SineMeshGenerator : MonoBehaviour
 {
     Mesh mesh;
 
