@@ -36,16 +36,29 @@ public class ParticleOptions : MonoBehaviour
     {
         if(objectTag.activeInHierarchy)
         {
-            objectTag.SetActive(false);
+            objectTag.SetActive(false);           
         } else
         {
             objectTag.SetActive(true);
         }
     }
 
+    public void toggleButtonColor(Image butt)
+    {
+        
+        if (butt.color == Color.red)
+        {
+            butt.color = Color.green;
+        }
+        else
+        {
+            butt.color = Color.red;
+        }
+    }
+
 
     // UI elements trigger these public functions
-    
+
     //random color
     public void setParticleColor()
     {

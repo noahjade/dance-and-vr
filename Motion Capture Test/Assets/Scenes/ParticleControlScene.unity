@@ -1167,6 +1167,18 @@ MonoBehaviour:
           m_StringArgument: Head
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 56312568}
+        m_TargetAssemblyTypeName: ParticleOptions, Assembly-CSharp
+        m_MethodName: toggleButtonColor
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 259340339}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &259340337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1240,7 +1252,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.27833042, g: 0.45497572, b: 0.9705882, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
     m_PressedColor: {r: 0.6039216, g: 0.654902, b: 0.70980394, a: 1}
     m_SelectedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
@@ -1276,7 +1288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2476,6 +2488,18 @@ MonoBehaviour:
           m_StringArgument: Head
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 56312568}
+        m_TargetAssemblyTypeName: ParticleOptions, Assembly-CSharp
+        m_MethodName: toggleButtonColor
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 578422036}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &578422034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2549,7 +2573,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.27833042, g: 0.45497572, b: 0.9705882, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
     m_PressedColor: {r: 0.6039216, g: 0.654902, b: 0.70980394, a: 1}
     m_SelectedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
@@ -2585,7 +2609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2688,6 +2712,18 @@ MonoBehaviour:
           m_StringArgument: Head
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 56312568}
+        m_TargetAssemblyTypeName: ParticleOptions, Assembly-CSharp
+        m_MethodName: toggleButtonColor
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 593083484}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &593083482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2761,7 +2797,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.27833042, g: 0.45497572, b: 0.9705882, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
     m_PressedColor: {r: 0.6039216, g: 0.654902, b: 0.70980394, a: 1}
     m_SelectedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
@@ -2797,7 +2833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3479,6 +3515,18 @@ MonoBehaviour:
           m_StringArgument: Head
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 56312568}
+        m_TargetAssemblyTypeName: ParticleOptions, Assembly-CSharp
+        m_MethodName: toggleButtonColor
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 691155656}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &691155654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3552,7 +3600,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.27833042, g: 0.45497572, b: 0.9705882, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
     m_PressedColor: {r: 0.6039216, g: 0.654902, b: 0.70980394, a: 1}
     m_SelectedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
@@ -3588,7 +3636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4471,6 +4519,18 @@ MonoBehaviour:
           m_StringArgument: Head
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 56312568}
+        m_TargetAssemblyTypeName: ParticleOptions, Assembly-CSharp
+        m_MethodName: toggleButtonColor
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 854968885}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &854968883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4544,7 +4604,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.27833042, g: 0.45497572, b: 0.9705882, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
     m_PressedColor: {r: 0.6039216, g: 0.654902, b: 0.70980394, a: 1}
     m_SelectedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
@@ -4580,7 +4640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5105,6 +5165,18 @@ MonoBehaviour:
           m_StringArgument: Head
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 56312568}
+        m_TargetAssemblyTypeName: ParticleOptions, Assembly-CSharp
+        m_MethodName: toggleButtonColor
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 925659671}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &925659669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5178,7 +5250,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.27833042, g: 0.45497572, b: 0.9705882, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
     m_PressedColor: {r: 0.6039216, g: 0.654902, b: 0.70980394, a: 1}
     m_SelectedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
@@ -5214,7 +5286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5626,6 +5698,18 @@ MonoBehaviour:
           m_StringArgument: Head
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 56312568}
+        m_TargetAssemblyTypeName: ParticleOptions, Assembly-CSharp
+        m_MethodName: toggleButtonColor
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1004078030}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004078028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5699,7 +5783,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.27833042, g: 0.45497572, b: 0.9705882, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
     m_PressedColor: {r: 0.6039216, g: 0.654902, b: 0.70980394, a: 1}
     m_SelectedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
@@ -5735,7 +5819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5828,6 +5912,18 @@ MonoBehaviour:
           m_StringArgument: Head
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 56312568}
+        m_TargetAssemblyTypeName: ParticleOptions, Assembly-CSharp
+        m_MethodName: toggleButtonColor
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1013650572}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1013650570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5901,7 +5997,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.27833042, g: 0.45497572, b: 0.9705882, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
     m_PressedColor: {r: 0.6039216, g: 0.654902, b: 0.70980394, a: 1}
     m_SelectedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
@@ -5937,7 +6033,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6490,6 +6586,18 @@ MonoBehaviour:
           m_StringArgument: Head
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 56312568}
+        m_TargetAssemblyTypeName: ParticleOptions, Assembly-CSharp
+        m_MethodName: toggleButtonColor
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1216431637}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1216431635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6563,7 +6671,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.27833042, g: 0.45497572, b: 0.9705882, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
     m_PressedColor: {r: 0.6039216, g: 0.654902, b: 0.70980394, a: 1}
     m_SelectedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
@@ -6599,7 +6707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7157,6 +7265,18 @@ MonoBehaviour:
           m_StringArgument: Head
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 56312568}
+        m_TargetAssemblyTypeName: ParticleOptions, Assembly-CSharp
+        m_MethodName: toggleButtonColor
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1270522734}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1270522732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7230,7 +7350,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.27833042, g: 0.45497572, b: 0.9705882, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
     m_PressedColor: {r: 0.6039216, g: 0.654902, b: 0.70980394, a: 1}
     m_SelectedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
@@ -7266,7 +7386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7505,6 +7625,18 @@ MonoBehaviour:
           m_StringArgument: Head
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 56312568}
+        m_TargetAssemblyTypeName: ParticleOptions, Assembly-CSharp
+        m_MethodName: toggleButtonColor
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1298521942}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1298521940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7578,7 +7710,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.27833042, g: 0.45497572, b: 0.9705882, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
     m_PressedColor: {r: 0.6039216, g: 0.654902, b: 0.70980394, a: 1}
     m_SelectedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
@@ -7614,7 +7746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8277,6 +8409,18 @@ MonoBehaviour:
           m_StringArgument: Head
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 56312568}
+        m_TargetAssemblyTypeName: ParticleOptions, Assembly-CSharp
+        m_MethodName: toggleButtonColor
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1415311411}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1415311409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8350,7 +8494,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.27833042, g: 0.45497572, b: 0.9705882, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
     m_PressedColor: {r: 0.6039216, g: 0.654902, b: 0.70980394, a: 1}
     m_SelectedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
@@ -8386,7 +8530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8611,6 +8755,18 @@ MonoBehaviour:
           m_StringArgument: Head
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 56312568}
+        m_TargetAssemblyTypeName: ParticleOptions, Assembly-CSharp
+        m_MethodName: toggleButtonColor
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1440526258}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1440526256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8684,7 +8840,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.27833042, g: 0.45497572, b: 0.9705882, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
     m_PressedColor: {r: 0.6039216, g: 0.654902, b: 0.70980394, a: 1}
     m_SelectedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
@@ -8720,7 +8876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9223,6 +9379,18 @@ MonoBehaviour:
           m_StringArgument: Head
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 56312568}
+        m_TargetAssemblyTypeName: ParticleOptions, Assembly-CSharp
+        m_MethodName: toggleButtonColor
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1541024233}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1541024231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9296,7 +9464,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.27833042, g: 0.45497572, b: 0.9705882, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
     m_PressedColor: {r: 0.6039216, g: 0.654902, b: 0.70980394, a: 1}
     m_SelectedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
@@ -9332,7 +9500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -10418,6 +10586,18 @@ MonoBehaviour:
           m_StringArgument: Head
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 56312568}
+        m_TargetAssemblyTypeName: ParticleOptions, Assembly-CSharp
+        m_MethodName: toggleButtonColor
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1795187906}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1795187904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10491,7 +10671,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.27833042, g: 0.45497572, b: 0.9705882, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
     m_PressedColor: {r: 0.6039216, g: 0.654902, b: 0.70980394, a: 1}
     m_SelectedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
@@ -10527,7 +10707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11176,6 +11356,18 @@ MonoBehaviour:
           m_StringArgument: Head
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 56312568}
+        m_TargetAssemblyTypeName: ParticleOptions, Assembly-CSharp
+        m_MethodName: toggleButtonColor
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1955953805}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1955953803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11249,7 +11441,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.27833042, g: 0.45497572, b: 0.9705882, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
     m_PressedColor: {r: 0.6039216, g: 0.654902, b: 0.70980394, a: 1}
     m_SelectedColor: {r: 0.5921569, g: 0.70980394, b: 0.83921576, a: 1}
@@ -11285,7 +11477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
