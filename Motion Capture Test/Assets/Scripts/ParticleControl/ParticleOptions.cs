@@ -32,6 +32,17 @@ public class ParticleOptions : MonoBehaviour
         
     }
 
+    public void toggleEnable(GameObject objectTag)
+    {
+        if(objectTag.activeInHierarchy)
+        {
+            objectTag.SetActive(false);
+        } else
+        {
+            objectTag.SetActive(true);
+        }
+    }
+
 
     // UI elements trigger these public functions
     
@@ -52,8 +63,6 @@ public class ParticleOptions : MonoBehaviour
     //selected color
     public void setSelectedParticleColor(Image img)
     {
-
-
         Color color = img.color;
         colorRefImage.color = color;
 
