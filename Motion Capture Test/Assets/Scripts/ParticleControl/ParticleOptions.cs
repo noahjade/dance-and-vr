@@ -11,34 +11,46 @@ public class ParticleOptions : MonoBehaviour
     //image that the current color of the particles is displayed on
     public Image colorRefImage;
 
+    public LinearMapping gravityMap;
+    public LinearMapping startSpeedMap;
+    public LinearMapping inheritVelocityMap;
+
     public LinearMapping minEmissionMap;
     public LinearMapping emissionMultiplierMap;
 
+    private float currentGravityMap = 0.0f;
+    private float currentStartSpeedMap = 0.0f;
+    private float currentInheritVelocityMap = 0.0f;
+
     private float currentMinEmissionMap = 0.0f;
     private float currentEmissionMultiplierMap = 0.0f;
+
+    //Max min values for the sliders
     private float minMin = 0.0f;
     private float maxMin = 20.0f;
+
     private float minMultiplier = 1.0f;
     private float maxMultiplier = 10.0f;
 
-    //All the instances of the customisable particles.
-    //Though, I guess I want them to be particle systems....
+    private float minGravity = 0.0f;
+    private float maxGravity = 4.0f;
+
+    private float minStartSpeed = 0.3f;
+    private float maxStartSpeed = 1.0f;
+
+    private float minInheritVelocity = 0.0f;
+    private float maxInheritVelocity = 5.0f;
+
+
 
     ParticleSystem[] pS;
-
     CustomBodyParticles[] cbP;
-
-    //Okay. Honestly I'm going to refactor so all particle control is here, including movement-velocity stuff.
-
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
-
-
         // First, get all the particles in the scene.
         // Note: if in the furture the scene includes more particles systems than just the mover, this will have to be altered to filter by tag.
         pS = FindObjectsOfType<ParticleSystem>();
@@ -60,7 +72,6 @@ public class ParticleOptions : MonoBehaviour
         // debug the number of the particle systems that were found so we can easily spot weird behavior
         Debug.Log("number of particle systems: " + pS.Length);
         Debug.Log("number of custom bps: " + cbP.Length);
-
     }
 
     void Update()
@@ -95,11 +106,59 @@ public class ParticleOptions : MonoBehaviour
             // update the variables in the CustomBodyParticles Script.
             foreach (CustomBodyParticles p in cbP)
             {
-                p.emMultiplier = currentEmissionMultiplierMap;
+                p.emMultiplier = scaled;
             }
             
         }
 
+        if (currentGravityMap != gravityMap.value)
+        {
+            updateGravity();
+        }
+
+        if (currentStartSpeedMap != startSpeedMap.value)
+        {
+            updateStartSpeed();
+        }
+
+        if (currentInheritVelocityMap != inheritVelocityMap.value)
+        {
+            updateInheritVelocity();
+        }
+
+
+    }
+
+    private void updateGravity()
+    {
+        currentGravityMap = gravityMap.value;
+
+        float scaled = scale(0.0f, 1.0f, minGravity, maxGravity, currentGravityMap);
+
+        //update the gravity for each particle
+        foreach (ParticleSystem p in pS)
+        {
+            var main = p.main;
+            main.gravityModifier = scaled;
+        }
+    }
+
+    private void updateStartSpeed()
+    {
+        currentStartSpeedMap = startSpeedMap.value;
+
+        float scaled = scale(0.0f, 1.0f, minStartSpeed, maxStartSpeed, currentStartSpeedMap);
+
+        foreach (ParticleSystem p in pS)
+        {
+            var main = p.main;
+            main.startSpeed = scaled;
+        }
+    }
+
+    private void updateInheritVelocity()
+    {
+        //update the inherit velocity for each particle.
     }
 
     //helper function
