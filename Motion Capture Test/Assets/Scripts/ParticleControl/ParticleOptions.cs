@@ -42,10 +42,10 @@ public class ParticleOptions : MonoBehaviour
     private float maxStartSpeed = 0.5f;
 
     private float minInheritVelocity = 0.0f;
-    private float maxInheritVelocity = 5.0f;
+    private float maxInheritVelocity = 6.0f;
 
     private float minLifeTime = 1.0f;
-    private float maxLifeTime = 5.0f;
+    private float maxLifeTime = 8.0f;
 
 
 
@@ -259,6 +259,19 @@ public class ParticleOptions : MonoBehaviour
         }
     }
 
+    public void toggleCollision()
+    {
+        //boolean now = true;
+
+        
+
+        foreach (ParticleSystem p in pS)
+        {
+            var c = p.collision;
+            c.enabled = !c.enabled;
+        }
+    }
+   
     public void acknowledgeMePlease()
     {
         Debug.Log("Yup! That was acknowledged :)");
