@@ -35,8 +35,8 @@ public class ParticleOptions : MonoBehaviour
     private float minGravity = 0.0f;
     private float maxGravity = 4.0f;
 
-    private float minStartSpeed = 0.3f;
-    private float maxStartSpeed = 1.0f;
+    private float minStartSpeed = 0.1f;
+    private float maxStartSpeed = 0.5f;
 
     private float minInheritVelocity = 0.0f;
     private float maxInheritVelocity = 5.0f;
