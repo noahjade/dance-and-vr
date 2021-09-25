@@ -2,12 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Valve.VR.InteractionSystem;
 
 
 public class ParticleOptions : MonoBehaviour
 {
     //image that the current color of the particles is displayed on
     public Image colorRefImage;
+
+    public LinearMapping minEmissionMap;
+    public LinearMapping emissionMultiplierMap;
+
+    private float currentMinEmissionMap = 0.0f;
+    private float currentEmissionMultiplierMap = 0.0f;
 
     //All the instances of the customisable particles.
     //Though, I guess I want them to be particle systems....
@@ -30,6 +37,29 @@ public class ParticleOptions : MonoBehaviour
         // debug the number of the particle systems that were found so we can easily spot weird behavior
         Debug.Log("number of particle systems: " + pS.Length);
         
+    }
+
+    void Update()
+    {
+        //Tracks whether the sliders have changed.
+        if (currentMinEmissionMap != minEmissionMap.value)
+        {
+            currentMinEmissionMap = minEmissionMap.value;
+
+            // update the variables in the CustomBodyParticles Script.
+
+            //img.color = new Color(currentrMap, currentgMap, currentbMap, .5f);
+        }
+
+        if (currentEmissionMultiplierMap != emissionMultiplierMap.value)
+        {
+            currentEmissionMultiplierMap = emissionMultiplierMap.value;
+
+            // update the variables in the CustomBodyParticles Script.
+
+            //img.color = new Color(currentrMap, currentgMap, currentbMap, .5f);
+        }
+
     }
 
     public void toggleEnable(GameObject objectTag)

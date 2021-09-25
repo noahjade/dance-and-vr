@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class CustomBodyParticles : MonoBehaviour
 {
+
+    //variables that we want to be able to adjust from within app
+    public float minEmission = 10.0f;
+    public float emMultiplier = 2.0f; //always x10000 so its noticeable.
+
     // needs to get the object who's velocity we care about
     public Rigidbody rb;
 
@@ -13,7 +18,7 @@ public class CustomBodyParticles : MonoBehaviour
 
     private int delayCount =0;  
 
-    // and the particle system who's emmission and colour we want to fuck with
+    // and the particle system who's emmission and colour we want to mess with
     public ParticleSystem ps;
 
     //The different gradients to use at different speeds
@@ -24,19 +29,7 @@ public class CustomBodyParticles : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       // var col = ps.colorBySpeed;
-       // col.enabled = true;
-
-       // Gradient grad = new Gradient();
-       // grad.SetKeys( new GradientColorKey[] { new GradientColorKey(Color.blue, 0.0f), new GradientColorKey(Color.red, 1.0f) }, new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), new GradientAlphaKey(0.0f, 1.0f) } );
-
-        // Initialise the gradients
-        //InitialiseGradients();
-
         position = rb.transform.position;
-
-        //col.color = grad;
-        //ps.Stop();
     }
 
     // Update is called once per frame
@@ -48,7 +41,7 @@ public class CustomBodyParticles : MonoBehaviour
         if(delayCount < 20){
             position = rb.transform.position;
             delayCount = delayCount + 1;
-            firstTime = false;
+            //firstTime = false;
         }
 
         //var col = ps.colorBySpeed;
@@ -62,39 +55,13 @@ public class CustomBodyParticles : MonoBehaviour
         //em.rateOverTime = Vector3.Distance(position, newposition)*10000 * 2.0f;
 
         //Linear relationship
-        em.rateOverTime = Vector3.Distance(position, newposition)*10000 * 2.0f + 10.0f;
+        em.rateOverTime = Vector3.Distance(position, newposition)*10000 * emMultiplier + minEmission;
 
         //expontential relationship
         // 10 is waaay too high per update
         // so is 1
 
-
-        /* if( Vector3.Distance(position, newposition)*10000 > 12 ) {
-
-            em.rateOverTime = 40.0f;
-            //its moving?
-            //col.color = grad3;
-        } else {
-            em.rateOverTime = 10.0f;
-            //col.color = grad1;
-           // Debug.Log(rb.velocity.magnitude);
-           //Debug.Log(Vector3.Distance(position, newposition)*100000); //when we *100000 we get ranges between 0 and ~ 69 max. biggest max was 100+ but that might have been an outlier.
-        } */
-
-        //var emission = ParticleSystem.emission;
         position = newposition;
     }
 
-
-    private void InitialiseGradients(){
-        grad1 = new Gradient(); //blue
-        grad1.SetKeys( new GradientColorKey[] { new GradientColorKey(Color.blue, 1.0f), new GradientColorKey(Color.red, 1.0f) }, new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), new GradientAlphaKey(0.0f, 1.0f) } );
-
-        grad2 = new Gradient();
-        grad2.SetKeys( new GradientColorKey[] { new GradientColorKey(Color.magenta, 0.0f), new GradientColorKey(Color.yellow, 1.0f) }, new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), new GradientAlphaKey(0.0f, 1.0f) } );
-
-        grad3 = new Gradient();
-        grad3.SetKeys( new GradientColorKey[] { new GradientColorKey(Color.yellow, 0.0f), new GradientColorKey(Color.red, 1.0f) }, new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), new GradientAlphaKey(0.0f, 1.0f) } );
-
-    }
 }
