@@ -15,12 +15,15 @@ public class ParticleOptions : MonoBehaviour
     public LinearMapping startSpeedMap;
     public LinearMapping inheritVelocityMap;
 
+    public LinearMapping lifeTimeMap;
+
     public LinearMapping minEmissionMap;
     public LinearMapping emissionMultiplierMap;
 
     private float currentGravityMap = 0.0f;
     private float currentStartSpeedMap = 0.0f;
     private float currentInheritVelocityMap = 0.0f;
+    private float currentLifeTimeMap = 0.0f;
 
     private float currentMinEmissionMap = 0.0f;
     private float currentEmissionMultiplierMap = 0.0f;
@@ -40,6 +43,9 @@ public class ParticleOptions : MonoBehaviour
 
     private float minInheritVelocity = 0.0f;
     private float maxInheritVelocity = 5.0f;
+
+    private float minLifeTime = 1.0f;
+    private float maxLifeTime = 5.0f;
 
 
 
@@ -126,7 +132,25 @@ public class ParticleOptions : MonoBehaviour
             updateInheritVelocity();
         }
 
+        if (currentLifeTimeMap != lifeTimeMap.value)
+        {
+            updateLifeTime();
+        }
 
+    }
+
+    private void updateLifeTime()
+    {
+        currentLifeTimeMap = lifeTimeMap.value;
+
+        float scaled = scale(0.0f, 1.0f, minLifeTime, maxLifeTime, currentLifeTimeMap);
+
+        //update the gravity for each particle
+        foreach (ParticleSystem p in pS)
+        {
+            var main = p.main;
+            main.startLifetime = scaled;
+        }
     }
 
     private void updateGravity()

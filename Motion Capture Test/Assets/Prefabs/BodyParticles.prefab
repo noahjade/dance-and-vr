@@ -3612,7 +3612,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 5}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
     type: 1
     collisionMode: 0
@@ -4819,6 +4819,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c567b6ee159bbf4ea3ac89021b6afa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minEmission: 10
+  emMultiplier: 2
   rb: {fileID: 1110897729900266271}
   ps: {fileID: 2710315447051100047}
 --- !u!54 &1110897729900266271
