@@ -14,7 +14,7 @@ public class CustomBodyParticles : MonoBehaviour
 
     private Vector3 position;
     private Vector3 newposition;
-    private bool firstTime = true;
+
 
     private int delayCount =0;  
 
@@ -41,25 +41,16 @@ public class CustomBodyParticles : MonoBehaviour
         if(delayCount < 20){
             position = rb.transform.position;
             delayCount = delayCount + 1;
-            //firstTime = false;
+            
         }
 
-        //var col = ps.colorBySpeed;
-        //col.enabled = true;
         var em = ps.emission;
         em.enabled = true;
   
         newposition = rb.transform.position;
 
-        //Linear relationship no base
-        //em.rateOverTime = Vector3.Distance(position, newposition)*10000 * 2.0f;
-
         //Linear relationship
         em.rateOverTime = Vector3.Distance(position, newposition)*10000 * emMultiplier + minEmission;
-
-        //expontential relationship
-        // 10 is waaay too high per update
-        // so is 1
 
         position = newposition;
     }

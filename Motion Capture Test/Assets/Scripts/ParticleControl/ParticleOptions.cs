@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using Valve.VR.InteractionSystem;
 
 
+
 public class ParticleOptions : MonoBehaviour
 {
     //image that the current color of the particles is displayed on
@@ -15,28 +16,51 @@ public class ParticleOptions : MonoBehaviour
 
     private float currentMinEmissionMap = 0.0f;
     private float currentEmissionMultiplierMap = 0.0f;
+    private float minMin = 0.0f;
+    private float maxMin = 20.0f;
+    private float minMultiplier = 1.0f;
+    private float maxMultiplier = 10.0f;
 
     //All the instances of the customisable particles.
     //Though, I guess I want them to be particle systems....
 
-    //Object.FindObjectsOfType
-    //
     ParticleSystem[] pS;
 
-    
-    
+    CustomBodyParticles[] cbP;
+
+    //Okay. Honestly I'm going to refactor so all particle control is here, including movement-velocity stuff.
+
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         
+
+
         // First, get all the particles in the scene.
         // Note: if in the furture the scene includes more particles systems than just the mover, this will have to be altered to filter by tag.
         pS = FindObjectsOfType<ParticleSystem>();
 
+        // extremely scuffed way of getting all the custombodyparticles lol
+        cbP = new CustomBodyParticles[pS.Length];
+        int i = 0;
+        foreach(ParticleSystem p in pS)
+        {
+            CustomBodyParticles[] bb = p.gameObject.GetComponents<CustomBodyParticles>();
+            if(bb.Length > 0)
+            {
+                cbP[i] = bb[0];
+            }
+            i++;
+        }
+        
+        
         // debug the number of the particle systems that were found so we can easily spot weird behavior
         Debug.Log("number of particle systems: " + pS.Length);
-        
+        Debug.Log("number of custom bps: " + cbP.Length);
+
     }
 
     void Update()
@@ -46,20 +70,45 @@ public class ParticleOptions : MonoBehaviour
         {
             currentMinEmissionMap = minEmissionMap.value;
 
-            // update the variables in the CustomBodyParticles Script.
+            //this value needs to be scaled so that its not just between 0 and 1.
+            float scaled = scale(0.0f, 1.0f, minMin, maxMin, currentMinEmissionMap);     
 
-            //img.color = new Color(currentrMap, currentgMap, currentbMap, .5f);
+            // update the variables in the CustomBodyParticles Script.
+            foreach (CustomBodyParticles p in cbP)
+            {
+                p.minEmission = scaled;
+            }
+
+            
+
+                //img.color = new Color(currentrMap, currentgMap, currentbMap, .5f);
         }
 
         if (currentEmissionMultiplierMap != emissionMultiplierMap.value)
         {
+            
             currentEmissionMultiplierMap = emissionMultiplierMap.value;
 
-            // update the variables in the CustomBodyParticles Script.
+            //this value needs to be scaled so that its not just between 0 and 1.
+            float scaled = scale(0.0f, 1.0f, minMultiplier, maxMultiplier, currentEmissionMultiplierMap);
 
-            //img.color = new Color(currentrMap, currentgMap, currentbMap, .5f);
+            // update the variables in the CustomBodyParticles Script.
+            foreach (CustomBodyParticles p in cbP)
+            {
+                p.emMultiplier = currentEmissionMultiplierMap;
+            }
+            
         }
 
+    }
+
+    //helper function
+    private float scale(float OldMin, float OldMax, float NewMin, float NewMax, float OldValue)
+    {
+        float OldRange = (OldMax - OldMin);
+        float NewRange = (NewMax - NewMin);
+        float NewValue = (((OldValue - OldMin) * NewRange) / OldRange) + NewMin;
+        return (NewValue);
     }
 
     public void toggleEnable(GameObject objectTag)
