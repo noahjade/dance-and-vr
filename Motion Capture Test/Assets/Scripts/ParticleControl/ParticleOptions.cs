@@ -158,7 +158,17 @@ public class ParticleOptions : MonoBehaviour
 
     private void updateInheritVelocity()
     {
-        //update the inherit velocity for each particle.
+        currentInheritVelocityMap = inheritVelocityMap.value;
+
+        float scaled = scale(0.0f, 1.0f, minInheritVelocity, maxInheritVelocity, currentInheritVelocityMap);
+
+        //update the gravity for each particle
+        foreach (ParticleSystem p in pS)
+        {
+            var iv = p.inheritVelocity;
+            iv.curveMultiplier = scaled;
+            //main.gravityModifier = scaled;
+        }
     }
 
     //helper function
