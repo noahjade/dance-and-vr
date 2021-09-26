@@ -46,13 +46,8 @@ public class VelocityScaler : MonoBehaviour
 
         float speed = sum/(velTrackList.Length); //get average speed
 
-        if(speed < minSpeed){
-            ratio = 0;
-        } else if(speed > minSpeed + maxSpeed){
-            ratio = 1;
-        } else {
-            ratio = (speed/(minSpeed + maxSpeed));
-        }
+        ratio = Mathf.InverseLerp(minSpeed, maxSpeed, speed);
+        ratio = ratio*ratio;
 
         //Smooth out transitions using delta
         if(ratio > prevRatio){
