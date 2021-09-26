@@ -17,7 +17,7 @@ public class MapGenerator : MonoBehaviour {
 	public float lacunarity;
 
 	public int seed;
-	public Vector2 offset;
+	public float offset;
 
 	public bool autoUpdate;
 
