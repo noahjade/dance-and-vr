@@ -46,7 +46,7 @@ public class AccelerationThresholdColour : MonoBehaviour
         ratio = 0f;
         prevRatio = 0f;
 
-        _renderer.material.SetColor("_Color", lowColour);
+        _renderer.material.SetColor("_BaseColor", lowColour);
     }
 
     void Update()
@@ -83,7 +83,7 @@ public class AccelerationThresholdColour : MonoBehaviour
             float emission = (ratio*(highEmission - lowEmission)) + lowEmission;
 
             //Call SetColor using the shader property name "_Color"
-            _renderer.material.SetColor("_Color",  col);
+            _renderer.material.SetColor("_BaseColor",  col);
             Material mymat = _renderer.material;
             mymat.SetColor("_EmissionColor", col*emission);
         }
